@@ -29,9 +29,7 @@ jobs:
         run: |
           git config --local user.email "${{ env.BOT_EMAIL }}"
           git config --local user.name "${{ env.BOT_NAME }}"
-          touch new.txt
-          git add new.txt
-          git commit -m "chore: add new file"
+          git commit -m "chore: add new file" --allow-empty
           echo "::set-output name=commit::true"
 
         # Push directly to the `develop` branch so we get the changes included in the release PR
